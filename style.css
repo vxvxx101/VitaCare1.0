@@ -1,0 +1,522 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+  list-style: none;
+  text-decoration: none;
+  outline: 0;
+  border: 0;
+}
+
+:root {
+  --general-font-family: "Monda", sans-serif;
+}
+
+.vitacare-logo {
+  color: RED;
+  font-size: 2rem;
+  margin-left: 2rem;
+  font-family: "Merienda", cursive;
+  cursor: pointer;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.7rem;
+  font-family: var(--general-font-family);
+  color: black;
+  color: red;
+}
+
+/* header section */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--background-color);
+  height: 10%;
+  width: 100%;
+  position: fixed;
+  background-color: black;
+  z-index: 2;
+}
+
+.links {
+  display: flex;
+  justify-content: space-evenly;
+  margin-right: 20px;
+}
+
+.links li {
+  margin: 0 40px 0 40px;
+  position: relative;
+}
+
+.links li a {
+  color: white;
+  font-family: var(--general-font-family);
+  transition: all 0.2s ease-in-out;
+}
+
+.links li a:hover {
+  color: red;
+  position: relative;
+}
+
+.links li a:after {
+  content: "";
+  position: absolute;
+  background: red;
+  width: 0;
+  height: 2px;
+  border-radius: 5px;
+  bottom: -10.5px;
+  left: 1px;
+  transition: all 0.26s ease;
+}
+
+.links li a:hover:after {
+  width: 100%;
+}
+
+/* home section */
+
+.home-secion {
+  background: url(/imagess/pexels-subin-946727.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home-secion::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: linear-gradient(rgb(255, 255, 255, 0.1), rgb(255, 255, 255, 0));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.home-text {
+  /* z-index: 1; */
+  font-size: 3rem;
+  padding: 200px 170px 0 170px;
+  color: white;
+  text-align: center;
+}
+
+.home-btn {
+  margin-top: 100px;
+  width: 300px;
+  height: 60px;
+  border-radius: 15px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.19s ease-in-out;
+}
+.btn-text {
+  /* padding-top: 15px; */
+  transition: all 0.2s ease-in-out;
+  font-size: 1.4rem;
+  padding-top: 10px;
+}
+
+.arrow-img {
+  width: 15px;
+  height: 10px;
+  transform: rotate(-270deg);
+  visibility: hidden;
+  transition: all 0.2s ease-in-out;
+}
+
+.home-btn:hover {
+  height: 70px;
+  transform: scale(1.14);
+  background-color: rgb(55, 54, 54);
+}
+
+.home-btn:hover .arrow-img {
+  visibility: visible;
+  margin-bottom: 10px;
+}
+
+.home-btn:hover .btn-text {
+  padding-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+/* about section */
+
+.about-section {
+  background-color: rgba(203, 179, 172, 0.795);
+  width: 100%;
+  height: 100%;
+}
+
+.about-section h1 {
+  padding: 50px 0 30px 0;
+}
+
+.about-section-sections {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+/* about text section  */
+
+.about-text-section {
+  width: 50%;
+  height: 100vh;
+  padding: 0 40px 0 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-text-section h2 {
+  padding-bottom: 40px;
+  padding-right: 50px;
+  text-align: center;
+  font-family: var();
+  font-size: 2rem;
+}
+
+.about-section-btn {
+  width: 199px;
+  height: 50px;
+  color: white;
+  background-color: rgb(196, 14, 14);
+  border: white solid 1px;
+  margin-top: 60px;
+  cursor: pointer;
+  transition: all ease 0.3s;
+}
+
+.about-section-btn:hover {
+  color: red;
+  background-color: white;
+  border: red solid 1px;
+}
+
+.about-text-section .vitacare-logo {
+  font-size: 2.5rem;
+  position: relative;
+}
+
+.about-text-section .vitacare-logo::before {
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(38, 0, 255, 0.831),
+    rgba(115, 0, 255, 0.941)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: absolute;
+  overflow: hidden;
+  content: attr(data-text);
+  -webkit-text-stroke: 0.1vw rgba(255, 42, 0, 0.55);
+  animation: animateText 6s linear infinite;
+}
+
+@keyframes animateText {
+  0%,
+  10%,
+  100% {
+    width: 0;
+  }
+
+  70%,
+  90% {
+    width: 100%;
+  }
+}
+
+/* 
+about logo section  */
+
+.about-logo-section {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.about-logo-section .vitacare-logo {
+  padding-bottom: 130px;
+  z-index: 2;
+  font-size: 2.8rem;
+  /* width: 300px;
+  height: 300px; */
+}
+.rotataing-about-imgs {
+  left: -10px;
+  bottom: -30px;
+  width: 400px;
+  height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  margin-left: 200px;
+  margin-top: 100px;
+  animation: animate 5s linear infinite;
+}
+
+.rotataing-about-imgs img {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  animation: animate 5s linear infinite;
+}
+
+.about-png-img1 {
+  left: 360px;
+}
+
+.about-png-img2 {
+  right: 360px;
+}
+
+.about-png-img3 {
+  top: 340px;
+}
+
+.about-png-img4 {
+  bottom: 340px;
+}
+
+/* animation  */
+
+@keyframes animate {
+  0% {
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* 
+product section */
+
+.products-section {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.products-btn {
+  width: 200px;
+  height: 50px;
+  margin: auto;
+  background: black;
+  margin-bottom: 80px;
+  margin-top: 30px;
+  color: red;
+  border: red solid 1px;
+  cursor: pointer;
+  transition: all ease 0.3s;
+}
+
+.products-btn:hover {
+  background: red;
+  color: black;
+}
+
+.products-img-box {
+  width: 380px;
+  height: 300px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.products-img-box img {
+  width: 300px;
+  height: 150px;
+}
+
+.products-img-price {
+  color: white;
+  padding-top: 30px;
+  padding-right: 180px;
+}
+
+.products-img-price h3 {
+  padding-top: 5px;
+  color: red;
+}
+
+.products-section h1 {
+  color: red;
+  margin: 50px 0 30px 0;
+}
+
+.products-section .products-diplay-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+}
+
+.products-box-container {
+  width: 400px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 30px;
+  background-color: black;
+}
+
+/* contact section */
+
+.Contact-section {
+  width: 100vw;
+  width: 100%;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0 50px 0;
+}
+
+.contact-text-section {
+  width: 100%;
+  padding: 0 80px 0 80px;
+  margin-bottom: 200px;
+}
+
+.contact-text-section h2 {
+  font-size: 2.7rem;
+  padding: 20px 0 20px 0;
+  color: white;
+}
+
+.contact-text-section h3 {
+  font-size: 1.8rem;
+  padding: 20px 0 18px 0;
+  color: white;
+}
+.contact-text-section span {
+  color: black;
+}
+
+.contact-text-section p {
+  font-size: 1.2rem;
+  padding: 20px 0 20px 0;
+  color: white;
+}
+
+.contacts-input-section {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  width: 100%;
+}
+
+.contacts-input-section .email-input,
+.number-input,
+.Text-input {
+  margin-bottom: 30px;
+  background-color: black;
+  color: white;
+  padding-left: 15px;
+}
+
+.contacts-input-section .number-input,
+.email-input {
+  width: 400px;
+  height: 50px;
+  border-radius: 30px;
+}
+
+.contacts-input-section .Text-input {
+  width: 400px;
+  height: 350px;
+  border-radius: 10px;
+}
+
+.contact-btn {
+  width: 200px;
+  height: 50px;
+  border-radius: 10px;
+  color: black;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  transition: all 0.19s ease-in-out;
+  /* padding: 0 10px 0 32px; */
+  cursor: pointer;
+}
+
+.contact-btn .btn-text {
+  font-size: 1rem;
+  padding-bottom: 11.5px;
+  padding-left: 28px;
+}
+
+#contact-btn-arrow {
+  font-size: 1.1rem;
+  /* padding-left: 30px; */
+  visibility: hidden;
+}
+
+.contact-btn:hover {
+  transform: scale(1.14);
+  background-color: rgb(24, 23, 23);
+  color: white;
+}
+
+.contact-btn:hover #contact-btn-arrow {
+  visibility: visible;
+  padding-right: 10px;
+}
+
+.contact-btn:hover .btn-text {
+  padding-right: 30px;
+}
+
+/* footer section */
+
+footer {
+  width: 100%;
+  height: 80px;
+  background-color: black;
+  color: white;
+  display: flex;
+  align-items: center;
+}
